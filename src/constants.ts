@@ -5,48 +5,48 @@ export const SCHEDULE_DATA: ScheduleDay[] = [
   {
     day: 'Monday',
     sessions: [
-      { id: 'mon-1', subject: 'Electronics System', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
-      { id: 'mon-2', subject: 'Technical English', startTime: '09:50', endTime: '10:40', type: 'Lecture' },
-      { id: 'mon-3', subject: 'Manuf Process', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
+      { id: 'mon-1', subject: 'Electronics System 203' , startTime: '08:00', endTime: '08:50', type: 'Lecture' },
+      { id: 'mon-2', subject: 'Technical English 203', startTime: '09:50', endTime: '10:40', type: 'Lecture' },
+      { id: 'mon-3', subject: 'Manuf Process 204', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
     ]
   },
   {
     day: 'Tuesday',
     sessions: [
-      { id: 'tue-1', subject: 'Manuf Process', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
-      { id: 'tue-2', subject: 'Physics', startTime: '09:50', endTime: '10:40', type: 'Lecture' },
-      { id: 'tue-3', subject: 'Maths', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
-      { id: 'tue-4', subject: 'Electronics System Lab', startTime: '11:40', endTime: '13:20', type: 'Lab' },
-      { id: 'tue-5', subject: 'Phy Lab', startTime: '14:00', endTime: '15:40', type: 'Lab' },
+      { id: 'tue-1', subject: 'Manuf Process 204', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
+      { id: 'tue-2', subject: 'Physics 205', startTime: '09:50', endTime: '10:40', type: 'Lecture' },
+      { id: 'tue-3', subject: 'Maths 204', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
+      { id: 'tue-4', subject: 'Electronics System Lab ab4 409', startTime: '11:40', endTime: '13:20', type: 'Lab' },
+      { id: 'tue-5', subject: 'Phy Lab ab1 202', startTime: '14:00', endTime: '15:40', type: 'Lab' },
     ]
   },
   {
     day: 'Wednesday',
     sessions: [
-      { id: 'wed-1', subject: 'Maths', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
-      { id: 'wed-2', subject: 'Electronics System', startTime: '08:55', endTime: '09:45', type: 'Lecture' },
-      { id: 'wed-3', subject: 'Technical English', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
-      { id: 'wed-4', subject: 'Manuf Process', startTime: '15:50', endTime: '17:30', type: 'Lecture' },
+      { id: 'wed-1', subject: 'Maths 204', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
+      { id: 'wed-2', subject: 'Electronics System 203', startTime: '08:55', endTime: '09:45', type: 'Lecture' },
+      { id: 'wed-3', subject: 'Technical English 203', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
+      { id: 'wed-4', subject: 'Manuf Process 001', startTime: '15:50', endTime: '17:30', type: 'Lecture' },
     ]
   },
   {
     day: 'Thursday',
     sessions: [
-      { id: 'thu-1', subject: 'Technical English', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
-      { id: 'thu-2', subject: 'Manuf Process', startTime: '08:55', endTime: '09:45', type: 'Lecture' },
-      { id: 'thu-3', subject: 'Physics', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
-      { id: 'thu-4', subject: 'Maths', startTime: '11:40', endTime: '12:30', type: 'Lecture' },
-      { id: 'thu-5', subject: 'Technical English Lab', startTime: '14:00', endTime: '15:40', type: 'Lab' },
-      { id: 'thu-6', subject: 'Java', startTime: '15:50', endTime: '17:30', type: 'Lecture' },
+      { id: 'thu-1', subject: 'Technical English 203', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
+      { id: 'thu-2', subject: 'Manuf Process 204', startTime: '08:55', endTime: '09:45', type: 'Lecture' },
+      { id: 'thu-3', subject: 'Physics 205', startTime: '10:45', endTime: '11:35', type: 'Lecture' },
+      { id: 'thu-4', subject: 'Maths 204', startTime: '11:40', endTime: '12:30', type: 'Lecture' },
+      { id: 'thu-5', subject: 'Technical English Lab 806', startTime: '14:00', endTime: '15:40', type: 'Lab' },
+      { id: 'thu-6', subject: 'Java 513', startTime: '15:50', endTime: '17:30', type: 'Lecture' },
     ]
   },
   {
     day: 'Friday',
     sessions: [
-      { id: 'fri-1', subject: 'Physics', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
-      { id: 'fri-2', subject: 'Maths', startTime: '08:55', endTime: '09:45', type: 'Lecture' },
-      { id: 'fri-3', subject: 'Electronics System', startTime: '09:50', endTime: '10:40', type: 'Lecture' },
-      { id: 'fri-4', subject: 'Java', startTime: '11:40', endTime: '13:20', type: 'Lecture' },
+      { id: 'fri-1', subject: 'Physics 205', startTime: '08:00', endTime: '08:50', type: 'Lecture' },
+      { id: 'fri-2', subject: 'Maths 204', startTime: '08:55', endTime: '09:45', type: 'Lecture' },
+      { id: 'fri-3', subject: 'Electronics System 203', startTime: '09:50', endTime: '10:40', type: 'Lecture' },
+      { id: 'fri-4', subject: 'Java 513', startTime: '11:40', endTime: '13:20', type: 'Lecture' },
     ]
   },
   {
@@ -88,3 +88,4 @@ export const DAILY_QUOTES = [
   "The only way you can conquer me is through love and there I am gladly conquered.",
   "Calmness, gentleness, silence, self-restraint, and purity: these are the disciplines of the mind."
 ];
+
