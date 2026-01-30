@@ -1,28 +1,30 @@
 import React, { useMemo } from 'react';
-import type { ScheduleDay, ClassSession } from '../types';
+import { ScheduleDay, ClassSession } from '../types';
 import { SUBJECT_COLORS } from '../constants';
 import { timeToMinutes, getDurationString } from '../utils';
-import { Coffee, ArrowRight } from 'lucide-react';
+import { Coffee, ArrowRight, Trash2 } from 'lucide-react';
 
 interface Props {
   schedule: ScheduleDay;
+  isEditing?: boolean;
+  onDelete?: (id: string) => void;
 }
 
-const ScheduleList: React.FC<Props> = ({ schedule }) => {
+const ScheduleList: React.FC<Props> = ({ schedule, isEditing = false, onDelete }) => {
   const sortedSessions = useMemo(() => {
     return [...schedule.sessions].sort((a, b) => timeToMinutes(a.startTime) - timeToMinutes(b.startTime));
   }, [schedule]);
 
   const timelineItems = useMemo(() => {
     const items: (ClassSession | { isBreak: true; duration: number; startTime: string; endTime: string })[] = [];
-    
+
     for (let i = 0; i < sortedSessions.length; i++) {
       items.push(sortedSessions[i]);
-      
+
       if (i < sortedSessions.length - 1) {
         const currentEnd = timeToMinutes(sortedSessions[i].endTime);
         const nextStart = timeToMinutes(sortedSessions[i + 1].startTime);
-        
+
         // Only show break if it is longer than 5 minutes
         if (nextStart > currentEnd + 5) {
           items.push({
@@ -57,7 +59,7 @@ const ScheduleList: React.FC<Props> = ({ schedule }) => {
             return (
               <div key={`break-${idx}`} className="relative pl-8 animate-fadeIn">
                 <div className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-[#2D2D2D] rounded-full z-10"></div>
-                
+
                 <div className="p-4 border-2 border-dashed border-gray-400 rounded-xl bg-white/50 backdrop-blur-sm flex items-center gap-4 hover:border-[#2D2D2D] transition-colors">
                   <div className="p-2 bg-[#ECECEC] rounded-lg text-[#2D2D2D] border border-gray-300">
                     <Coffee size={20} />
@@ -80,21 +82,33 @@ const ScheduleList: React.FC<Props> = ({ schedule }) => {
               <div key={item.id} className="relative pl-8 group animate-slideIn">
                 {/* Timeline Dot */}
                 <div className={`absolute left-2 top-8 w-4 h-4 bg-[#2D2D2D] border-2 border-white rounded-full z-10 group-hover:scale-125 transition-transform shadow-[0_0_0_4px_rgba(255,255,255,0.5)]`}></div>
-                
-                <div className={`doodle-box p-5 border-2 transition-all hover:-translate-y-1 hover:shadow-lg ${style}`}>
+
+                <div className={`doodle-box p-5 border-2 transition-all hover:-translate-y-1 hover:shadow-lg ${style} relative`}>
+                  {isEditing && onDelete && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onDelete(item.id);
+                      }}
+                      className="absolute top-2 right-2 p-1.5 bg-red-500 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 hover:bg-red-600 shadow-sm"
+                      title="Delete Class"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  )}
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <h3 className="text-xl font-bold font-doodle tracking-wide">{item.subject}</h3>
+                      <h3 className="text-xl font-bold font-doodle tracking-wide pr-8">{item.subject}</h3>
                       <span className="text-xs px-2 py-0.5 rounded-full border border-current bg-white/50 mt-1 inline-block">
                         {item.type}
                       </span>
                     </div>
                     <div className="text-right">
-                       <div className="text-2xl font-bold font-mono opacity-90">{item.startTime}</div>
-                       <div className="text-xs opacity-60 flex items-center justify-end gap-1 font-bold">
-                         <ArrowRight size={12} />
-                         {item.endTime}
-                       </div>
+                      <div className="text-2xl font-bold font-mono opacity-90">{item.startTime}</div>
+                      <div className="text-xs opacity-60 flex items-center justify-end gap-1 font-bold">
+                        <ArrowRight size={12} />
+                        {item.endTime}
+                      </div>
                     </div>
                   </div>
                 </div>
