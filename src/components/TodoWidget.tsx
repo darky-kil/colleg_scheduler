@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import type { TodoItem } from '../types';
-import { Plus, Trash2, CheckSquare, Square, Settings, RefreshCw, AlertCircle, HelpCircle} from 'lucide-react';
+import { TodoItem } from '../types';
+import { Plus, Trash2, CheckSquare, Square, Settings, RefreshCw, AlertCircle, HelpCircle, X, Copy } from 'lucide-react';
 
 interface Props {
   todos: TodoItem[];
